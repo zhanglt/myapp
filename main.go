@@ -7,26 +7,27 @@ import (
 	"fyne.io/fyne/v2/app"
 	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/widget"
+	"github.com/zhanglt/myapp/myapp"
 	"github.com/zhanglt/myapp/theme"
 )
 
-var r fyne.Resource
-var data = []string{"a", "string", "list"}
-
 func main() {
+	app := myapp.NewAPP()
+	app.New().Run()
+
+}
+func main1() {
 	myApp := app.New()
 	wm := myApp.NewWindow("备份工具")
-	r, _ = fyne.LoadResourceFromPath("img/add1.png")
 	wm.SetMainMenu(menu2())
 	content := container.NewBorder(toolbar(), nil, nil, nil, widget.NewLabel("测试中文"))
 	wm.SetContent(content)
-
 	// lets create a label
 	label1 := widget.NewLabel("...")
 	// newselectentry widget
 	// []string{} it take only slice of option
 	//& you can your options also in run time. Not hardcoded
-	select_entry := widget.NewSelectEntry([]string{"Local", "SFTP", "Minio", "S3"})
+	select_entry := widget.NewSelectEntry([]string{"本地硬盘", "SFTP", "Minio", "S3"})
 
 	// what to do with the selected entry ?
 	// here is what we are going to define
@@ -51,6 +52,8 @@ func main() {
 }
 
 func toolbar() *widget.Toolbar {
+	var r fyne.Resource
+	r, _ = fyne.LoadResourceFromPath("img/add1.png")
 	toolbar := widget.NewToolbar(
 		widget.NewToolbarAction(r, func() {
 			fmt.Println("create")
