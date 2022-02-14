@@ -6,12 +6,16 @@ require (
 	fyne.io/fyne v1.4.3
 	fyne.io/fyne/v2 v2.1.2
 	fyne.io/x/fyne v0.0.0-20220107050838-c4a1de51d4ce
+	github.com/sqweek/dialog v0.0.0-20211002065838-9a201b55ab91
 )
 
 require (
+	github.com/TheTitanrain/w32 v0.0.0-20180517000239-4f5cfb03fabf // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
+	github.com/fpabl0/sparky-go v0.0.0-20211219032039-aaafaded6f8d // indirect
 	github.com/fredbi/uri v0.0.0-20181227131451-3dcfdacbaaf3 // indirect
 	github.com/fsnotify/fsnotify v1.4.9 // indirect
+	github.com/fyne-io/mobile v0.1.3-0.20210524083716-78f416561547 // indirect
 	github.com/go-gl/gl v0.0.0-20210813123233-e4099ee2221f // indirect
 	github.com/go-gl/glfw/v3.3/glfw v0.0.0-20211024062804-40e447a793be // indirect
 	github.com/godbus/dbus/v5 v5.0.4 // indirect

@@ -6,7 +6,9 @@ import (
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
 	"fyne.io/fyne/v2/container"
+	"fyne.io/fyne/v2/layout"
 	"fyne.io/fyne/v2/widget"
+	"github.com/fpabl0/sparky-go/swid"
 	mytheme "github.com/zhanglt/myapp/theme"
 )
 
@@ -50,7 +52,14 @@ func (myapp *MyAPP) setToolbar() {
 
 		}),
 	)
-	content := container.NewBorder(toolbar, nil, nil, nil, widget.NewLabel("测试中文"))
+	button := widget.NewButtonWithIcon("测试图标", r, func() {})
+	button.IconPlacement = 0
+	button.IconPosition = layout.NewVBoxLayout()
+
+	//file := NewFileChoice("文件选择", "bbb", "....")
+	a := []string{"c", "b"}
+	file := swid.NewSelectField(a, func(string) {})
+	content := container.NewBorder(toolbar, nil, nil, nil, file, file)
 	myapp.win.SetContent(content)
 	myapp.toolbar = toolbar
 }
